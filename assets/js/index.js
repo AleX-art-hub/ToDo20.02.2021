@@ -6,13 +6,22 @@ const tasksListElem = document.getElementById('tasksList');
 let isValid = false;
 inputTaskElem.oninput = onInputHandler;
 createTaskButtonElem.addEventListener('click', onCreateTask);
-/*
+
 deleteTaskButtonElem.addEventListener('click',onDeleteTask);
 
-function onDeleteTask(){
-
+function onDeleteTask(event){
+  deleteTaskInput(inputTaskElem.value);
+  inputTaskElem.value = '';
 }
-*/
+function deleteTaskInput(value){
+  if(value){
+    const task1 = document.removeChild('li');
+    task1.classList.remove('taskElem');
+    task.textContent = inputTaskElem.value;
+  }
+  return;
+}
+
 function onCreateTask(event) {
   addTaskInput(inputTaskElem.value);
   inputTaskElem.value = '';
